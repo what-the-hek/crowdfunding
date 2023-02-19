@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import "./Nav.css"
+
 function Nav() {
     const handleClick  = () => {
         // window.close();
@@ -15,6 +17,7 @@ function Nav() {
 
     return (
     <nav>
+        <p>Sanctuary</p>
         <Link to="/">Home</Link>
         <button onClick={handleClick}>Quick exit 4</button>
     </nav>

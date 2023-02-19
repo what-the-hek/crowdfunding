@@ -13,10 +13,18 @@ import Nav from "./components/Nav/nav";
 // CSS
 import "./App.css"
 
+
+const handleClick  = () => {
+  window.history.replaceState({}, 'foo', '/foo');
+  window.open("http://www.bom.gov.au/","_blank");
+  window.location.replace("https://google.com");
+};
+
 const HeaderLayout = () => (
   <div>
     <Nav />
     <Outlet />
+    <button id="quick-exit" onClick={handleClick}>Quick exit</button>
   </div>
 );
 

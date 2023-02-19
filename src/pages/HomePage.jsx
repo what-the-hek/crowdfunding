@@ -22,7 +22,7 @@ function HomePage() {
 
     return (
         <section>
-            <h1>Placeholder website title</h1>
+            <h1>Sanctuary</h1>
             <div id="project-list">
                 {projectList.map((project, key) => {
                     return <ProjectCard key={key} projectData={project} />;
