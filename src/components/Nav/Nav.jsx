@@ -1,10 +1,22 @@
 import { Link } from "react-router-dom";
 
 function Nav() {
+    const handleClick  = () => {
+        // window.close();
+    // this isn't working yet, needs to stop 'back' from going back to the website, for some reason it is clearing the
+    // last item but not all (though when I double checked, it doesn't seem to matter if this line is here or not)
+    // I also checked the white ribbon website where I found a similar button and it doesn't work either
+        window.history.replaceState({}, 'foo', '/foo');
+    // found another website where they open a new tab and redirect the existing, I prefer this approach https://www.ruah.org.au/stories/
+        window.open("http://www.bom.gov.au/","_blank");
+    // this works
+        window.location.replace("https://google.com");
+    };
+
     return (
     <nav>
         <Link to="/">Home</Link>
-        <Link to="/project">Project</Link>
+        <button onClick={handleClick}>Quick exit 4</button>
     </nav>
     );
 }
