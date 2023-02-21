@@ -5,14 +5,15 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 // Pages
 import HomePage from "./pages/HomePage";
+import LogInPage from "./pages/LoginPage";
 import ProjectPage from "./pages/ProjectPage";
+import CreateProjectPage from "./pages/CreateProjectPage";
 
 // Components
 import Nav from "./components/Nav/nav";
 
 // CSS
 import "./App.css"
-
 
 const handleClick  = () => {
   window.history.replaceState({}, 'foo', '/foo');
@@ -21,11 +22,13 @@ const handleClick  = () => {
 };
 
 const HeaderLayout = () => (
-  <div>
+  <section>
     <Nav />
     <Outlet />
+    <div>
     <button id="quick-exit" onClick={handleClick}>Quick exit</button>
   </div>
+  </section>
 );
 
 const router = createBrowserRouter([
@@ -33,7 +36,10 @@ const router = createBrowserRouter([
     element: <HeaderLayout />,
     children: [
       { path: "/", element: <HomePage /> },
+      { path: "/login", element: <LogInPage />},
       { path: "/project/:id", element: <ProjectPage /> },
+      { path: "/create-project", element: <CreateProjectPage />},
+      { path: "/signout", element: <HomePage />},
     ],
   },
 ]);

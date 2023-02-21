@@ -14,8 +14,13 @@
     /* border: 1px solid lightgray; */
 }
 
+section p {
+    padding: 20px;
+}
+
 h1 {
-    padding-top: 150px;
+    padding: 100px 20px 20px;
+    font-size: 2.5rem;
     color: var(--purple)
 }
 
@@ -31,4 +36,6 @@ h1 {
     padding: 10px;
     background-color: var(--orange);
     color: var(--white);
+    position: sticky;
+    right: 20px;
 }

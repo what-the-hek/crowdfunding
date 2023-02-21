@@ -1,10 +1,10 @@
 nav {
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     padding: 10px;
     background-color: var(--purple);
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 }
 
 nav a, nav p {

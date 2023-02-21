@@ -23,6 +23,7 @@ function HomePage() {
     return (
         <section>
             <h1>Sanctuary</h1>
+            <p>Crowdfunding for people have experienced family and domestic violence.</p>
             <div id="project-list">
                 {projectList.map((project, key) => {
                     return <ProjectCard key={key} projectData={project} />;
