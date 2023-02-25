@@ -2,7 +2,29 @@ import { Link } from "react-router-dom";
 
 import "./Nav.css"
 
-function Nav() {
+function Nav(props) {
+
+    const { loggedIn, setLoggedIn } = props;
+
+    const handleClick = () => {
+        window.localStorage.removeItem("token");
+        setLoggedIn(false)
+    }
+
+    return (
+    <nav>
+        <p>Sanctuary</p>
+        <Link to="/">Home</Link>
+        <Link to="/projects-list">Browse</Link>
+        <Link to="/create-project">Create a new project</Link>
+        {!loggedIn && <Link to="/login" className="btn">Login In</Link>}
+        {loggedIn && <button onClick={handleClick}>Sign Out</button>}
+    </nav>
+    );
+}
+
+export default Nav;
+
     // const handleClick  = () => {
     //     // window.close();
     // // this isn't working yet, needs to stop 'back' from going back to the website, for some reason it is clearing the
@@ -14,17 +36,3 @@ function Nav() {
     // // this works
     //     window.location.replace("https://google.com");
     // };
-
-    return (
-    <nav>
-        <p>Sanctuary</p>
-        <Link to="/">Home</Link>
-        <Link to="/projects-list">Browse</Link>
-        <Link to="/create-project">Create a new project</Link>
-        <Link to="/login">Sign in</Link>
-        <Link to="/">Sign out</Link>
-    </nav>
-    );
-}
-
-export default Nav;

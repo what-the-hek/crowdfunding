@@ -1,4 +1,5 @@
 // use the { } if you're not importing the default
+import { useState } from "react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 // Smooth curled brackets is an implicit return
@@ -15,21 +16,35 @@ import Nav from "./components/Nav/Nav";
 // CSS
 import "./App.css"
 
+
 const handleClick  = () => {
   window.history.replaceState({}, 'foo', '/foo');
   window.open("http://www.bom.gov.au/","_blank");
   window.location.replace("https://google.com");
 };
 
-const HeaderLayout = () => (
-  <section>
-    <Nav />
-    <Outlet />
-    <div>
-    <button id="quick-exit" onClick={handleClick}>Quick exit</button>
-  </div>
-  </section>
-);
+// const HeaderLayout = () => (
+//   <section>
+//     <Nav />
+//     <Outlet />
+//     <div>
+//     <button id="quick-exit" onClick={handleClick}>Quick exit</button>
+//   </div>
+//   </section>
+// );
+
+const HeaderLayout = () => {
+  const [loggedIn, setLoggedIn] = useState(window.localStorage.getItem("token") != null)
+  return (
+    <>
+      <Nav loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <Outlet context={[loggedIn, setLoggedIn]} />
+      <div>
+          <button id="quick-exit" onClick={handleClick}>Quick exit</button>
+      </div>
+    </>
+  );
+}
 
 const router = createBrowserRouter([
   {
