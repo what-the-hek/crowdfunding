@@ -10,7 +10,7 @@ import ProjectPage from "./pages/ProjectPage";
 import CreateProjectPage from "./pages/CreateProjectPage";
 
 // Components
-import Nav from "./components/Nav/nav";
+import Nav from "./components/Nav/Nav";
 
 // CSS
 import "./App.css"
