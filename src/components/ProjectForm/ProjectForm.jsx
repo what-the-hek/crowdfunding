@@ -1,11 +1,18 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams, useOutletContext } from "react-router-dom";
 
 function CreateProjectForm() {
+    const authToken = window.localStorage.getItem("token");
+    const [loggedIn] = useOutletContext();
 
     // State
-
-
+    const [project, setProject] = useState({
+      "title": "",
+      "description": "",
+      "goal": null,
+      "img": "",
+    });
+   
     // Hooks
     const navigate = useNavigate();
 
@@ -15,39 +22,47 @@ function CreateProjectForm() {
         const {id, value} = event.target;
 
         // because we're not returning anything, we use ( brackets )
-        setCredentials((prevCredentials) => ({
+        setProject((prevProject) => ({
             // ... take all the values out of this object and put in new object
-            ...prevCredentials,
+            ...prevProject,
             // this line overrides the previous credentials
             [id]: value,
         }));
     };
 
-    const postData = async () => {
-        const response = await fetch(
-          `${import.meta.env.VITE_API_URL}api-token-auth/`,
-          {
-            method: "post",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(credentials),
-          }
-        );
-        return response.json();
-      };
-
       const handleSubmit = async (event) => {
         event.preventDefault();
-        if (credentials.username && credentials.password) {
-          const { token } = await postData();
-        //   "token" is the id, token is the value
-          window.localStorage.setItem("token", token);
-          navigate("/");
-        }
-      };
+
+        if (loggedIn) {
+          try {
+            const response = await fetch(
+              `${import.meta.env.VITE_API_URL}project/`,
+              {
+                method: "post",
+                headers: {
+                  "Content-Type": "application/json",
+                  "Authorization": `Token ${authToken}`,
+                },
+                body: JSON.stringify(project),
+              }
+            );
+            if (!response.ok) {
+              throw new Error(await response.text());
+            }
+            location.reload();
+          } catch (err) {
+            console.error(err);
+            alert(`Error: ${err.message}`);
+            }
+          } else {
+            // redirect to login page
+            navigate(`/login`);
+          }
+          };
 
     return (
+      <>
+      {loggedIn?
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="title">Title:</label>
@@ -91,6 +106,8 @@ function CreateProjectForm() {
           Save
         </button>
       </form>
+      : (<p>Log in to submit a project</p>) }
+      </>
     );
   }
   

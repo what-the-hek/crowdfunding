@@ -12,26 +12,17 @@ import CreateProjectPage from "./pages/CreateProjectPage";
 
 // Components
 import Nav from "./components/Nav/Nav";
+import PledgeForm from "./components/PledgeForm/PledgeForm";
 
 // CSS
 import "./App.css"
 
-
+// Quick exit button for user safety - should update to also log out
 const handleClick  = () => {
   window.history.replaceState({}, 'foo', '/foo');
   window.open("http://www.bom.gov.au/","_blank");
   window.location.replace("https://google.com");
 };
-
-// const HeaderLayout = () => (
-//   <section>
-//     <Nav />
-//     <Outlet />
-//     <div>
-//     <button id="quick-exit" onClick={handleClick}>Quick exit</button>
-//   </div>
-//   </section>
-// );
 
 const HeaderLayout = () => {
   const [loggedIn, setLoggedIn] = useState(window.localStorage.getItem("token") != null)
@@ -54,6 +45,7 @@ const router = createBrowserRouter([
       { path: "/login", element: <LogInPage />},
       { path: "/project/:id", element: <ProjectPage /> },
       { path: "/create-project", element: <CreateProjectPage />},
+      { path: "/donate", element: <PledgeForm />},
       { path: "/signout", element: <HomePage />},
     ],
   },
