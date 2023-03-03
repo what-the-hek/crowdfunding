@@ -12,13 +12,17 @@ function Nav(props) {
     }
 
     return (
-    <nav>
-        <p>Sanctuary</p>
+    <nav className="nav-links">
+        <div>
+        <Link to="/projects-list">Discover</Link>
+        <Link to="/create-project">Start a project</Link>
+        </div>
+        <p id="title">Healium</p>
+        <div>
         <Link to="/">Home</Link>
-        <Link to="/projects-list">Browse</Link>
-        <Link to="/create-project">Create project</Link>
-        {!loggedIn && <Link to="/login" className="btn">Login In</Link>}
-        {loggedIn && <button onClick={handleClick}>Sign Out</button>}
+        {!loggedIn && <Link to="/login" className="btn">Log In</Link>}
+        {loggedIn && <button onClick={handleClick}>Log Out</button>}
+        </div>
     </nav>
     );
 }

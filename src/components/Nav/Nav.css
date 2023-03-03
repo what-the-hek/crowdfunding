@@ -1,17 +1,39 @@
-nav {
-    /* position: fixed; */
+/* * {
+    border: solid 1px black;
+} */
+
+.nav-links {
+    display: flex;
+    position: fixed;
     width: 100%;
     padding: 10px;
-    background-color: var(--purple);
+    background-color: var(--white);
+    justify-content: space-between;
+    box-shadow: 0px 15px 15px -15px var(--shadow);
+}
+
+.nav-links div {
     display: flex;
-    /* justify-content: space-around; */
+    height: fit-content;
+    padding: 0;
+    margin: 0;
 }
 
-nav a, nav p {
-    color: var(--white);
+.nav-links a, .nav-links button {
+    background-color: var(--purple);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px;
+    margin: 5px;
 }
 
-nav p {
-    color: var(--white);
-    font-size: 1.5rem;
+#title {
+    font-family: "Caveat";
+    /* font-weight: 700; */
+    color: var(--purple);
+    font-size: 2.5rem;
+    margin: 5px;
 }
