@@ -1,7 +1,10 @@
 .project-card {
     width: 100%;
-    border: 1px solid black;
-    box-shadow: 0px 0px 5px gray;}
+    border: 1px solid var(--purple);
+    border-radius: 2%;
+    box-shadow: 0px 0px 5px var(--purple);
+    background-color: white;
+}
 
 .project-card img {
     width: 100%;

@@ -4,9 +4,28 @@ import { useParams } from "react-router-dom";
 // Components
 import PledgeForm from "../components/PledgeForm/PledgeForm";
 
+const getUser = async () => {
+  // fetch request for users
+  // console log and results.json
+  // pass 'id' into this func as parameter
+  // map over list of users and match the id, once there is a match return users username
+  // parse id over list
+  
+    // Hooks
+    const { id } = useParams();
+
+    const userList = await fetch(`${import.meta.env.VITE_API_URL}users/`);
+  
+    const parsedUserList = await userList.json();
+  
+    console.log(parsedUserList);
+}
+
+
 function ProjectPage() {
 // State
   const [project, setproject] = useState({pledges: []});
+  const [user, setUser] = useState();
 
 
   // Hooks
@@ -25,18 +44,23 @@ function ProjectPage() {
       setproject(data);
     });
   }, []);
+  
+getUser()
 
   return (
-    <div>
+    <>
       <h2>{project.title}</h2>
+      <h3>{project.owner}</h3>
       <h3>Created at: {project.date_created}</h3>
       <h3>{`Status: ${project.is_open}`}</h3>
+      <p>${project.goal}</p>
+      <p>{project.description}</p>
       <h3>Pledges:</h3>
       <ul>
         {project.pledges.map((pledgeData, key) => {
           return (
-            <li>
-              {pledgeData.amount} from {pledgeData.supporter}
+            <li key={key}>
+              ${pledgeData.amount} from {pledgeData.supporter}. {pledgeData.comment}
             </li>
           );
         })}
@@ -44,7 +68,7 @@ function ProjectPage() {
       <div>
         <PledgeForm />
       </div>
-    </div>
+    </>
   );
 }
 

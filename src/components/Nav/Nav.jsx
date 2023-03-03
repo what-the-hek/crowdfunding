@@ -8,7 +8,7 @@ function Nav(props) {
 
     const handleClick = () => {
         window.localStorage.removeItem("token");
-        setLoggedIn(false)
+        setLoggedIn(false);
     }
 
     return (
@@ -16,7 +16,7 @@ function Nav(props) {
         <p>Sanctuary</p>
         <Link to="/">Home</Link>
         <Link to="/projects-list">Browse</Link>
-        <Link to="/create-project">Create a new project</Link>
+        <Link to="/create-project">Create project</Link>
         {!loggedIn && <Link to="/login" className="btn">Login In</Link>}
         {loggedIn && <button onClick={handleClick}>Sign Out</button>}
     </nav>

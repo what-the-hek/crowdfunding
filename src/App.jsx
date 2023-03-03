@@ -12,7 +12,6 @@ import CreateProjectPage from "./pages/CreateProjectPage";
 
 // Components
 import Nav from "./components/Nav/Nav";
-import PledgeForm from "./components/PledgeForm/PledgeForm";
 
 // CSS
 import "./App.css"
@@ -45,7 +44,6 @@ const router = createBrowserRouter([
       { path: "/login", element: <LogInPage />},
       { path: "/project/:id", element: <ProjectPage /> },
       { path: "/create-project", element: <CreateProjectPage />},
-      { path: "/donate", element: <PledgeForm />},
       { path: "/signout", element: <HomePage />},
     ],
   },

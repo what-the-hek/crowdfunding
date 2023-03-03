@@ -6,7 +6,7 @@ function CreateProjectForm() {
     const [loggedIn] = useOutletContext();
 
     // State
-    const [project, setProject] = useState({
+    const [projects, setProjects] = useState({
       "title": "",
       "description": "",
       "goal": null,
@@ -22,9 +22,9 @@ function CreateProjectForm() {
         const {id, value} = event.target;
 
         // because we're not returning anything, we use ( brackets )
-        setProject((prevProject) => ({
+        setProjects((prevProjects) => ({
             // ... take all the values out of this object and put in new object
-            ...prevProject,
+            ...prevProjects,
             // this line overrides the previous credentials
             [id]: value,
         }));
@@ -36,14 +36,14 @@ function CreateProjectForm() {
         if (loggedIn) {
           try {
             const response = await fetch(
-              `${import.meta.env.VITE_API_URL}project/`,
+              `${import.meta.env.VITE_API_URL}projects/`,
               {
                 method: "post",
                 headers: {
                   "Content-Type": "application/json",
                   "Authorization": `Token ${authToken}`,
                 },
-                body: JSON.stringify(project),
+                body: JSON.stringify(projects),
               }
             );
             if (!response.ok) {
