@@ -16,22 +16,12 @@ import Nav from "./components/Nav/Nav";
 // CSS
 import "./App.css"
 
-// Quick exit button for user safety - should update to also log out
-const handleClick  = () => {
-  window.history.replaceState({}, 'foo', '/foo');
-  window.open("http://www.bom.gov.au/","_blank");
-  window.location.replace("https://google.com");
-};
-
 const HeaderLayout = () => {
   const [loggedIn, setLoggedIn] = useState(window.localStorage.getItem("token") != null)
   return (
     <>
       <Nav loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Outlet context={[loggedIn, setLoggedIn]} />
-      <div>
-          <button id="quick-exit" onClick={handleClick}>Quick exit</button>
-      </div>
     </>
   );
 }

@@ -49,7 +49,7 @@ getUser()
 
   return (
     <>
-      <h2>{project.title}</h2>
+      <h1>{project.title}</h1>
       <h3>{project.owner}</h3>
       <h3>Created at: {project.date_created}</h3>
       <h3>{`Status: ${project.is_open}`}</h3>

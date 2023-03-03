@@ -9,7 +9,16 @@ function Nav(props) {
     const handleClick = () => {
         window.localStorage.removeItem("token");
         setLoggedIn(false);
-    }
+    };
+
+    // Quick exit button for user safety - should update to also log out
+    const handleClickExit  = () => {
+        window.localStorage.removeItem("token");
+        setLoggedIn(false);
+        window.history.replaceState({}, 'foo', '/foo');
+        window.open("http://www.bom.gov.au/","_blank");
+        window.location.replace("https://google.com");
+    };
 
     return (
     <nav className="nav-links">
@@ -22,6 +31,7 @@ function Nav(props) {
         <Link to="/">Home</Link>
         {!loggedIn && <Link to="/login" className="btn">Log In</Link>}
         {loggedIn && <button onClick={handleClick}>Log Out</button>}
+        <button id="quick-exit" onClick={handleClickExit}>Quick exit</button>
         </div>
     </nav>
     );

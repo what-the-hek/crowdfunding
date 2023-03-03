@@ -2,17 +2,24 @@
 
 :root {
     --purple: #763C7C;
-    --orange: #F7996E;
+    --orange: #f97233;
     --blue: #0FA3B1;
     --black: #02020A;
     --white: #F5F5F5;
     --shadow: #3A3446;
+    --hover: #8865A4;
+    --exit-hover: #F7996E;
   }
 
 * {
     font-family: "Raleway", Arial, Helvetica, sans-serif;
+    padding: 0;
     margin: 0;
     /* border: 1px solid lightgray; */
+}
+
+body {
+    background-color: var(--white);
 }
 
 section p {
@@ -21,22 +28,21 @@ section p {
 
 h1 {
     padding: 100px 20px 20px;
-    font-size: 2.5rem;
-    color: var(--purple)
+    align-self: center;
+    font-size: 4.5rem;
 }
 
 #project-list {
+    justify-content: center;
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    column-gap: 10px;
-    row-gap: 10px;
+    grid-template-columns: 20% 20% 20% 20%;
+    column-gap: 30px;
+    row-gap: 25px;
 }
 
-#quick-exit {
-    margin: 20px;
-    padding: 10px;
-    background-color: var(--orange);
-    color: var(--white);
-    position: sticky;
-    right: 20px;
+form {
+    border: solid 1px var(--shadow);
+    border-radius: 20px;
+    width: 50%;
+    background-color: white;
 }

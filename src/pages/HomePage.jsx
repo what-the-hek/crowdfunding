@@ -22,7 +22,7 @@ function HomePage() {
 
     return (
         <section>
-            <h1>Healium</h1>
+            <h1 id="title">Healium</h1>
             <p>Crowdfunding for people have experienced family and domestic violence.</p>
             <div id="project-list">
                 {projectList.map((project, key) => {
