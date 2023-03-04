@@ -73,6 +73,7 @@ function PledgeForm() {
         {loggedIn?
             <div>
             <form onSubmit={handleSubmit}>
+                <h3>Pledge</h3>
                 <div>
                 <label htmlFor="amount">Amount:</label>
                 <input
