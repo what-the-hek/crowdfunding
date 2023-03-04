@@ -23,13 +23,13 @@ function Nav(props) {
     return (
     <nav className="nav-links">
         <div>
-        <Link to="/projects-list">Discover</Link>
+        <Link to="/support">Support</Link>
         <Link to="/create-project">Start a project</Link>
         </div>
         <p id="title">Healium</p>
         <div>
         <Link to="/">Home</Link>
-        {!loggedIn && <Link to="/login" className="btn">Log In</Link>}
+        {!loggedIn && <Link to="/login">Log In</Link>}
         {loggedIn && <button onClick={handleClick}>Log Out</button>}
         <button id="quick-exit" onClick={handleClickExit}>Quick exit</button>
         </div>

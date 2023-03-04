@@ -22,6 +22,10 @@ body {
     background-color: var(--white);
 }
 
+h1, h2 {
+    font-family: "Fredoka One";
+}
+
 button {
     background-color: var(--purple);
     color: white;
@@ -31,14 +35,25 @@ button {
     font-size: 14px;
     padding: 10px;
     margin: 5px;
+    justify-content: center;
 }
 
 button:hover {
     background-color: var(--hover);
 }
 
+a {
+    color: var(--purple);
+}
+
+a:hover {
+    color: var(--hover);
+}
+
 section {
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section p {
@@ -46,7 +61,10 @@ section p {
 }
 
 h1 {
-
+    /* background-image: url(https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: none;
+    background-size: cover; */
+    width: 100%;
     text-align: center;
     color: var(--purple);
     padding: 100px 20px 20px;
@@ -54,24 +72,76 @@ h1 {
 }
 
 h2 {
+    width: 100%;
     text-align: center;
     background-color: var(--purple);
     color: white;
-    padding: 100px 20px 20px;
-    font-size: 4rem;
+    padding: 100px 20px 50px;
+    font-size: 3rem;
+}
+
+.text-block {
+    width: 60%;
+    justify-content: center;
+    margin: 25px;
+}
+
+.tagline {
+    text-align: center;
+    font-family: "Fredoka One";
+    font-size: 1.2rem;
+}
+
+.quick-exit-note {
+    font-family: "Fredoka One";
+    font-size: 1.2rem;
+    color: var(--orange)
+}
+
+#project-header {
+    width: 100%;
+    text-align: center;
+    background-color: var(--purple);
+    color: white;
+    padding: 50px 20px;
+    font-size: 3rem;
 }
 
 #project-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
-    column-gap: 30px;
-    row-gap: 25px;
 }
 
 form {
+    padding: 20px;
+    margin: 25px;
+    width: 100%;
+    background-color: white;
     border: solid 1px var(--shadow);
     border-radius: 20px;
-    width: 50%;
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+form div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+label, input {
+    width: 200%;
+    padding: 5px;
+    margin: 15px;
+}
+/* 
+label {
+    width: 20%
+}
+
+input {
+    width: 80%;
+} */

@@ -62,13 +62,14 @@ function CreateProjectForm() {
 
     return (
       <>
+      <section>
       {loggedIn?
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="title">Title:</label>
+          <label htmlFor="projecttitle">Title:</label>
           <input
             type="text"
-            id="title"
+            id="projecttitle"
             onChange={handleChange}
             placeholder="Enter project title"
           />
@@ -107,6 +108,7 @@ function CreateProjectForm() {
         </button>
       </form>
       : (<p>Log in to create a project</p>) }
+      </section>
       </>
     );
   }

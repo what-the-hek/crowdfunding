@@ -49,13 +49,18 @@ getUser()
 
   return (
     <>
-      <h1>{project.title}</h1>
-      <h3>{project.owner}</h3>
-      <h3>Created at: {project.date_created}</h3>
-      <h3>{`Status: ${project.is_open}`}</h3>
+    <h2>Healium project</h2>
+    <section>
+      <div className="text-block">
+      <h3>{project.title}</h3>
+      <p>{project.owner}</p>
+      <p>Created at: {project.date_created}</p>
+      <p>{`Status: ${project.is_open}`}</p>
       <p>${project.goal}</p>
       <p>{project.description}</p>
-      <h3>Pledges:</h3>
+      </div>
+      <div className="text-block">
+      <h3>Pledges</h3>
       <ul>
         {project.pledges.map((pledgeData, key) => {
           return (
@@ -65,9 +70,9 @@ getUser()
           );
         })}
       </ul>
-      <div>
-        <PledgeForm />
       </div>
+      <PledgeForm />
+      </section>
     </>
   );
 }

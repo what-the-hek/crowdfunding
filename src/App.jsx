@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage";
 import LogInPage from "./pages/LoginPage";
 import ProjectPage from "./pages/ProjectPage";
 import CreateProjectPage from "./pages/CreateProjectPage";
+import SupportPage from "./pages/SupportPage";".pages/SupportPage";
 
 // Components
 import Nav from "./components/Nav/Nav";
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
     element: <HeaderLayout />,
     children: [
       { path: "/", element: <HomePage /> },
+      { path: "/support", element: <SupportPage /> },
       { path: "/login", element: <LogInPage />},
       { path: "/project/:id", element: <ProjectPage /> },
       { path: "/create-project", element: <CreateProjectPage />},

@@ -4,8 +4,10 @@ import LoginForm from "../components/LoginForm/LoginForm";
 function LogInPage() {
     return (
     <>
-    <h1>Log in</h1>
-    <LoginForm />;
+    <h2>Log in</h2>
+    <section>
+    <LoginForm />
+    </section>
     </>
     );
 }

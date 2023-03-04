@@ -57,6 +57,7 @@ function LoginForm() {
     };
 
     return (
+      <section>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
@@ -80,6 +81,7 @@ function LoginForm() {
           Login
         </button>
       </form>
+      </section>
     );
   }
   

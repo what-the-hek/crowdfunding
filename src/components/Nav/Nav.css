@@ -32,6 +32,7 @@
 
 .nav-links a:hover, .nav-links button:hover {
     background-color: var(--hover);
+    color: white;
 }
 
 .nav-links p {

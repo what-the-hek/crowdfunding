@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // Components
 import ProjectCard from "../components/ProjectCard/ProjectCard";
@@ -23,7 +24,15 @@ function HomePage() {
     return (
         <section>
             <h1 id="title">Healium</h1>
-            <p>Crowdfunding for people have experienced family and domestic violence.</p>
+            <div className="text-block">
+            <p className="tagline">Helping people financially recover from family and domestic abuse.</p>
+            <p>Exiting an abusive situation or environment is already challenging.  
+                Your pledge can help someone find a new place to live, pay for medical bills, 
+                or provide care for their children. For more information about family and 
+                domestic violence support, visit our <Link to="/support">support page</Link>.</p>
+            <p>Select the <span className="quick-exit-note">'quick exit'</span> button to instantly log out and leave this website.</p>
+            </div>
+            <p id="project-header">Help someone heal today, view a project to pledge.</p>
             <div id="project-list">
                 {projectList.map((project, key) => {
                     return <ProjectCard key={key} projectData={project} />;
