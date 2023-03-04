@@ -91,7 +91,7 @@ function CreateProjectForm() {
             placeholder="$"
           />
         </div>
-
+{/* 
         <div>
         <label htmlFor="img">Image URL:</label>
           <input
@@ -100,13 +100,13 @@ function CreateProjectForm() {
             onChange={handleChange}
             placeholder="Enter an image URL"
           />
-        </div>
+        </div> */}
 
         <button type="submit">
-          Save
+          Create project
         </button>
       </form>
-      : (<p>Log in to submit a project</p>) }
+      : (<p>Log in to create a project</p>) }
       </>
     );
   }

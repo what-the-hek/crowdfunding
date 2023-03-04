@@ -6,7 +6,6 @@
     display: flex;
     position: fixed;
     width: 100%;
-    padding: 10px;
     background-color: var(--white);
     justify-content: space-between;
     box-shadow: 0px 15px 15px -15px var(--shadow);
@@ -17,6 +16,7 @@
     height: fit-content;
     padding: 0;
     margin: 0;
+    margin-top: 10px;
 }
 
 .nav-links a, .nav-links button {
@@ -35,11 +35,11 @@
 }
 
 .nav-links p {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 #title {
-    font-family: "Caveat";
+    font-family: "Fredoka One";
     color: var(--purple);
     margin: 5px;
 }
