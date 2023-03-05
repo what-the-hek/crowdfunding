@@ -26,7 +26,10 @@ function Nav(props) {
         <Link to="/support">Support</Link>
         <Link to="/create-project">Start a project</Link>
         </div>
+        <div>
+        <img src={`../assets/images/bubble-white.png`} alt="logo"/>
         <p id="title">Healium</p>
+        </div>
         <div>
         <Link to="/">Home</Link>
         {!loggedIn && <Link to="/login">Log In</Link>}

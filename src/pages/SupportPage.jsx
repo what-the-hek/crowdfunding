@@ -7,7 +7,7 @@ function SupportPage() {
             <div className="text-block">
             <p>View the resources below for family and domestic violence information and support services.</p>
             <ul>
-                <li><Link>White Ribbon</Link></li>
+                <li><Link to="https://www.whiteribbon.org.au/">White Ribbon Australia</Link></li>
             </ul>
             </div>
         </section>

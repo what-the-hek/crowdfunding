@@ -67,7 +67,7 @@ h1 {
     width: 100%;
     text-align: center;
     color: var(--purple);
-    padding: 100px 20px 20px;
+    padding: 120px 20px 20px;
     font-size: 7rem;
 }
 
@@ -90,6 +90,8 @@ h2 {
     text-align: center;
     font-family: "Fredoka One";
     font-size: 1.2rem;
+    width: 60%;
+    margin: 25px;
 }
 
 .quick-exit-note {
@@ -103,8 +105,21 @@ h2 {
     text-align: center;
     background-color: var(--purple);
     color: white;
-    padding: 50px 20px;
+    padding: 100px 20px 50px;
+    margin: 25px;
     font-size: 3rem;
+}
+
+#project-header img {
+    width: 150px;
+    padding: 0;
+    margin: 0;
+}
+
+#home-projects {
+    background-color: var(--white);
+    color: var(--purple);
+    padding: 15px;
 }
 
 #project-list {
@@ -137,11 +152,3 @@ label, input {
     padding: 5px;
     margin: 15px;
 }
-/* 
-label {
-    width: 20%
-}
-
-input {
-    width: 80%;
-} */
