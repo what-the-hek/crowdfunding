@@ -71,7 +71,7 @@ function PledgeForm() {
     return (
         <>
         {loggedIn?
-            <div>
+            <div className="text-block">
             <form onSubmit={handleSubmit}>
                 <h3>Pledge</h3>
                 <div>

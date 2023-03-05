@@ -50,26 +50,28 @@ getUser()
   return (
     <>
     <h2>Healium project</h2>
-    <section>
-      <div className="text-block">
-      <h3>{project.title}</h3>
-      <p>{project.owner}</p>
-      <p>Created at: {project.date_created}</p>
-      <p>{`Status: ${project.is_open}`}</p>
-      <p>${project.goal}</p>
-      <p>{project.description}</p>
-      </div>
-      <div className="text-block">
-      <h3>Pledges</h3>
-      <ul>
-        {project.pledges.map((pledgeData, key) => {
-          return (
-            <li key={key}>
-              ${pledgeData.amount} from {pledgeData.supporter}. {pledgeData.comment}
-            </li>
-          );
-        })}
-      </ul>
+    <section id="project-page-layout">
+      <div className="project-and-pledge">
+        <div>
+        <h3>{project.title}</h3>
+        <p>{project.owner}</p>
+        <p>Created: {project.date_created}</p>
+        <p>{`Status: ${project.is_open}`}</p>
+        <p>Goal ${project.goal}</p>
+        <p>{project.description}</p>
+        </div>
+        <div>
+            <h3>Pledges</h3>
+            <ul id="pledge-list">
+              {project.pledges.map((pledgeData, key) => {
+                return (
+                  <li key={key}>
+                    ${pledgeData.amount} from {pledgeData.supporter}. "{pledgeData.comment}"
+                  </li>
+                );
+              })}
+            </ul>
+        </div>
       </div>
       <PledgeForm />
       </section>
