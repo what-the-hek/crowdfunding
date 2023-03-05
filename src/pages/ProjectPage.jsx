@@ -27,6 +27,13 @@ function ProjectPage() {
   const [project, setproject] = useState({pledges: []});
   const [user, setUser] = useState();
 
+  // const d = new Date();
+  // let newDate = d.toLocaleDateString('en-GB');
+
+  // let isoDate = {date_created};
+  // var newDate = new Date(isoDate);
+  // newDate.toLocaleDateString('en-GB'); // dd/mm/yyyy
+  // console.log(newDate)
 
   // Hooks
   const { id } = useParams();

@@ -14,7 +14,7 @@ function CreateProjectForm() {
       "image": "https://images.pexels.com/photos/1487100/pexels-photo-1487100.jpeg?auto=compress&cs=tinysrgb&w=600",
       "is_open": true,
       // this date needs to be created automatically from today's date and time
-      "date_created": "2023-03-05T12:31:24.145010Z",
+      "date_created": new Date(),
     });
    
     // Hooks
