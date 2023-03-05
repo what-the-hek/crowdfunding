@@ -195,7 +195,7 @@ label, input {
 
 .project-and-pledge {
     padding: 30px;
-    /* width: 60%; */
+    width: 100%;
 }
 
 #pledge-list {

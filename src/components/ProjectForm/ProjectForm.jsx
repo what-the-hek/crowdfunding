@@ -10,10 +10,9 @@ function CreateProjectForm() {
       "title": "",
       "description": "",
       "goal": null,
-      // couldn't get the image field in form to work, so inserting generic images here for now
-      "image": "https://images.pexels.com/photos/1487100/pexels-photo-1487100.jpeg?auto=compress&cs=tinysrgb&w=600",
+      // default image, just in case
+      "image": "https://images.pexels.com/photos/7985583/pexels-photo-7985583.jpeg?auto=compress&cs=tinysrgb&w=600",
       "is_open": true,
-      // this date needs to be created automatically from today's date and time
       "date_created": new Date(),
     });
    
@@ -95,15 +94,15 @@ function CreateProjectForm() {
             placeholder="$"
           />
         </div>
-        {/* <div>
+        <div>
         <label htmlFor="image">Image URL:</label>
           <input
-            type="image"
+            type="url"
             id="image"
             onChange={handleChange}
             placeholder="Enter an image URL"
           />
-        </div> */}
+        </div>
         <button type="submit">
           Create project
         </button>

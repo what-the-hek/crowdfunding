@@ -27,13 +27,11 @@ function ProjectPage() {
   const [project, setproject] = useState({pledges: []});
   const [user, setUser] = useState();
 
-  // const d = new Date();
-  // let newDate = d.toLocaleDateString('en-GB');
-
-  // let isoDate = {date_created};
-  // var newDate = new Date(isoDate);
-  // newDate.toLocaleDateString('en-GB'); // dd/mm/yyyy
-  // console.log(newDate)
+  // convert ISO date to desired format
+  const options = {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+  };
+  const date = new Date(project.date_created).toLocaleDateString(undefined, options);
 
   // Hooks
   const { id } = useParams();
@@ -63,7 +61,7 @@ getUser()
           <h3>{project.title}</h3>
           <div id="project-info">
             <p>Created by {project.owner}</p>
-            <p>Date: {project.date_created}</p>
+            <p>Date: {`${date}`}</p>
             <p>Goal amount ${project.goal}</p>
             <p>Total pledges $---</p>
           </div>
@@ -92,5 +90,3 @@ getUser()
 }
 
 export default ProjectPage;
-
-{/* <p>{`Status: ${project.is_open}`}</p> */}

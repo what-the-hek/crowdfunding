@@ -4,18 +4,18 @@ import { useNavigate, useParams, useOutletContext } from "react-router-dom";
 function PledgeForm() {
     const authToken = window.localStorage.getItem("token")
     const [loggedIn] = useOutletContext();
-    const [pledges, setPledges] = useState({
-        "amount": null,
-        "comment": "",
-        "anonymous": false,
-        "project": null,        
-    });
 
     // enables redirect
     const navigate = useNavigate();
 
     // accesses project ID so the pledge can be connected to it
     const { id } = useParams();
+    const [pledges, setPledges] = useState({
+        "amount": null,
+        "comment": "",
+        "anonymous": false,
+        "project": id,        
+    });
 
     // copies the original data, replaces the old data for each id/value pair to what is input in the form (changes state)
     const handleChange = (event) => {
@@ -88,7 +88,7 @@ function PledgeForm() {
                     onChange={handleChange} 
                 />
                 </div>
-                <div>
+                {/* <div>
                 <label htmlFor="project">Project:</label>
                 <input
                     type="text"
@@ -96,7 +96,7 @@ function PledgeForm() {
                     placeholder="needs to be auto-filled with current project"
                     onChange={handleChange}
                 />
-                </div>
+                </div> */}
                 <button type="submit">Donate</button>
             </form>
         : (<p>Login to donate</p>) }
