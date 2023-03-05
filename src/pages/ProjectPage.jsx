@@ -54,10 +54,12 @@ getUser()
       <div className="project-and-pledge">
         <div>
         <h3>{project.title}</h3>
-        <p>{project.owner}</p>
-        <p>Created: {project.date_created}</p>
-        <p>{`Status: ${project.is_open}`}</p>
-        <p>Goal ${project.goal}</p>
+        <div id="project-info">
+          <p>Created by {project.owner}</p>
+          <p>Date: {project.date_created}</p>
+          <p>Goal amount ${project.goal}</p>
+          <p>Total pledges $---</p>
+        </div>
         <p>{project.description}</p>
         </div>
         <div>
@@ -73,10 +75,15 @@ getUser()
             </ul>
         </div>
       </div>
-      <PledgeForm />
+      <div>
+        <img id="project-image" src={project.image} />
+        <PledgeForm />
+        </div>
       </section>
     </>
   );
 }
 
 export default ProjectPage;
+
+{/* <p>{`Status: ${project.is_open}`}</p> */}

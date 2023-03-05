@@ -10,7 +10,7 @@
 }
 
 .project-card img {
-    width: 100%;
+    width: 300px;
     height: 250px;
     object-fit: cover;
     border-radius: 10px;
@@ -29,7 +29,8 @@
     color: var(--purple);
 }
 
-.project-card h3, .project-card p {
+.project-card h4, .project-card p {
+    width: 300px;
     padding: 0px;
     margin: 0px;
 }

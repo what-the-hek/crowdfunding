@@ -10,7 +10,11 @@ function CreateProjectForm() {
       "title": "",
       "description": "",
       "goal": null,
-      "img": "",
+      // couldn't get the image field in form to work, so inserting generic images here for now
+      "image": "https://images.pexels.com/photos/1487100/pexels-photo-1487100.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "is_open": true,
+      // this date needs to be created automatically from today's date and time
+      "date_created": "2023-03-05T12:31:24.145010Z",
     });
    
     // Hooks
@@ -62,14 +66,13 @@ function CreateProjectForm() {
 
     return (
       <>
-      <section>
       {loggedIn?
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="projecttitle">Title:</label>
+          <label htmlFor="title">Title:</label>
           <input
             type="text"
-            id="projecttitle"
+            id="title"
             onChange={handleChange}
             placeholder="Enter project title"
           />
@@ -92,23 +95,20 @@ function CreateProjectForm() {
             placeholder="$"
           />
         </div>
-{/* 
-        <div>
-        <label htmlFor="img">Image URL:</label>
+        {/* <div>
+        <label htmlFor="image">Image URL:</label>
           <input
             type="image"
-            id="img"
+            id="image"
             onChange={handleChange}
             placeholder="Enter an image URL"
           />
         </div> */}
-
         <button type="submit">
           Create project
         </button>
       </form>
       : (<p>Log in to create a project</p>) }
-      </section>
       </>
     );
   }
