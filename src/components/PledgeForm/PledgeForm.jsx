@@ -59,12 +59,12 @@ function PledgeForm() {
     return (
         <>
         {loggedIn?
-            <div className="text-block">
-            <form onSubmit={handleSubmit}>
+            <form className="pledgeform" onSubmit={handleSubmit}>
                 <h3>Pledge</h3>
                 <div>
                 <label htmlFor="amount">Amount:</label>
                 <input
+                    min="1"
                     type="number"
                     id="amount"
                     placeholder="Enter amount"
@@ -99,7 +99,6 @@ function PledgeForm() {
                 </div>
                 <button type="submit">Donate</button>
             </form>
-            </div> 
         : (<p>Login to donate</p>) }
         </>
     );

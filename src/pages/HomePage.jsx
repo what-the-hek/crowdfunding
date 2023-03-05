@@ -32,10 +32,10 @@ function HomePage() {
             <p id="project-header">Help someone heal today, view a project to pledge.<br/><img src={`../assets/images/bubble-purple.png`} alt="logo"/></p>
             <h2 id="home-projects">Projects</h2>
             <div className="text-block">
-            <p>Exiting an abusive situation or environment is already challenging.  
-                Your pledge can help someone find a new place to live, pay for medical bills, 
-                or provide care for their children. For more information about family and 
-                domestic violence support, visit our <Link to="/support">support page</Link>.</p>
+                <p>Exiting an abusive situation or environment is already challenging.  
+                    Your pledge can help someone find a new place to live, pay for medical bills, 
+                    or provide care for their children. For more information about family and 
+                    domestic violence support, visit our <Link to="/support">support page</Link>.</p>
             </div>
             <div id="project-list">
                 {projectList.map((project, key) => {

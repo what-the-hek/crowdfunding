@@ -169,12 +169,17 @@ label, input {
 #project-page-layout {
     display: flex;
     flex-direction: row;
-    /* align-content: space-around; */
+    align-items: flex-start;
     padding: 20px;
+    margin: 50px;
 }
 
 #project-image {
     width: 450px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
 }
 
 #project-info {
@@ -190,7 +195,7 @@ label, input {
 
 .project-and-pledge {
     padding: 30px;
-    width: 70%;
+    /* width: 60%; */
 }
 
 #pledge-list {
@@ -205,4 +210,8 @@ label, input {
     background-color: white;
     border: 1px solid var(--shadow);
     border-radius: 20px;
+}
+
+.pledgeform {
+    margin: 10px 0;
 }

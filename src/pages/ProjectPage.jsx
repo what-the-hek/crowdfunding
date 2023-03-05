@@ -53,14 +53,14 @@ getUser()
     <section id="project-page-layout">
       <div className="project-and-pledge">
         <div>
-        <h3>{project.title}</h3>
-        <div id="project-info">
-          <p>Created by {project.owner}</p>
-          <p>Date: {project.date_created}</p>
-          <p>Goal amount ${project.goal}</p>
-          <p>Total pledges $---</p>
-        </div>
-        <p>{project.description}</p>
+          <h3>{project.title}</h3>
+          <div id="project-info">
+            <p>Created by {project.owner}</p>
+            <p>Date: {project.date_created}</p>
+            <p>Goal amount ${project.goal}</p>
+            <p>Total pledges $---</p>
+          </div>
+          <p>{project.description}</p>
         </div>
         <div>
             <h3>Pledges</h3>
