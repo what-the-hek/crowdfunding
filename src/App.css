@@ -177,6 +177,7 @@ label, input {
 #project-image {
     width: 450px;
     height: 250px;
+    border: solid 1px var(--shadow);
     border-radius: 10px;
     object-fit: cover;
     object-position: center;
