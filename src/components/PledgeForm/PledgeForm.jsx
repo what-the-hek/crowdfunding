@@ -88,15 +88,6 @@ function PledgeForm() {
                     onChange={handleChange} 
                 />
                 </div>
-                {/* <div>
-                <label htmlFor="project">Project:</label>
-                <input
-                    type="text"
-                    id="project"
-                    placeholder="needs to be auto-filled with current project"
-                    onChange={handleChange}
-                />
-                </div> */}
                 <button type="submit">Donate</button>
             </form>
         : (<p>Login to donate</p>) }

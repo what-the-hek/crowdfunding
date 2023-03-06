@@ -4,28 +4,10 @@ import { useParams } from "react-router-dom";
 // Components
 import PledgeForm from "../components/PledgeForm/PledgeForm";
 
-const getUser = async () => {
-  // fetch request for users
-  // console log and results.json
-  // pass 'id' into this func as parameter
-  // map over list of users and match the id, once there is a match return users username
-  // parse id over list
-  
-    // Hooks
-    const { id } = useParams();
-
-    const userList = await fetch(`${import.meta.env.VITE_API_URL}users/`);
-  
-    const parsedUserList = await userList.json();
-  
-    console.log(parsedUserList);
-}
-
-
 function ProjectPage() {
 // State
   const [project, setproject] = useState({pledges: []});
-  const [user, setUser] = useState();
+  const [owner, setOwner] = useState([]);
 
   // convert ISO date to desired format
   const options = {
@@ -47,11 +29,19 @@ function ProjectPage() {
     })
     .then((data) => {
       setproject(data);
+
+      // get username of owner
+      const userId = data.owner;
+      return fetch(`${import.meta.env.VITE_API_URL}users/${userId}`);
+    })
+    .then((results) => {
+      return results.json();
+    })
+    .then((data) => {
+      return setOwner(data);
     });
   }, []);
   
-getUser()
-
   return (
     <>
     <h2>Healium project</h2>
@@ -60,7 +50,7 @@ getUser()
         <div>
           <h3>{project.title}</h3>
           <div id="project-info">
-            <p>Created by {project.owner}</p>
+            <p>Created by {owner.username}</p>
             <p>Date: {`${date}`}</p>
             <p>Goal amount ${project.goal}</p>
             <p>Total pledges $---</p>
