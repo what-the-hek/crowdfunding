@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 
 import "./Nav.css"
 
 function Nav(props) {
 
     const { loggedIn, setLoggedIn } = props;
+    const { user } = props;
+
+    // Hooks
+    const { id } = useParams(user);
 
     const handleClick = () => {
         window.localStorage.removeItem("token");
@@ -20,6 +25,19 @@ function Nav(props) {
         window.location.replace("https://google.com");
     };
 
+
+  // Effects
+//   useEffect(() => {
+//     fetch(`${import.meta.env.VITE_API_URL}users/${id}`)
+//     .then(results => {
+//       return results.json();
+//     })
+//     .then((data) => {
+//       setUser(data);
+//     });
+//   }, []);
+
+
     return (
     <nav className="nav-links">
         <div>
@@ -33,6 +51,7 @@ function Nav(props) {
         <div>
         <Link to="/">Home</Link>
         {!loggedIn && <Link to="/login">Log In</Link>}
+        {loggedIn && <Link to="users/">User profile</Link>}
         {loggedIn && <button onClick={handleClick}>Log Out</button>}
         <button id="quick-exit" onClick={handleClickExit}>Quick exit</button>
         </div>
@@ -41,15 +60,3 @@ function Nav(props) {
 }
 
 export default Nav;
-
-    // const handleClick  = () => {
-    //     // window.close();
-    // // this isn't working yet, needs to stop 'back' from going back to the website, for some reason it is clearing the
-    // // last item but not all (though when I double checked, it doesn't seem to matter if this line is here or not)
-    // // I also checked the white ribbon website where I found a similar button and it doesn't work either
-    //     window.history.replaceState({}, 'foo', '/foo');
-    // // found another website where they open a new tab and redirect the existing, I prefer this approach https://www.ruah.org.au/stories/
-    //     window.open("http://www.bom.gov.au/","_blank");
-    // // this works
-    //     window.location.replace("https://google.com");
-    // };

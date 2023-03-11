@@ -10,6 +10,7 @@ import LogInPage from "./pages/LoginPage";
 import ProjectPage from "./pages/ProjectPage";
 import CreateProjectPage from "./pages/CreateProjectPage";
 import SupportPage from "./pages/SupportPage";".pages/SupportPage";
+import UserProfilePage from "./pages/UserProfilePage";
 
 // Components
 import Nav from "./components/Nav/Nav";
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
       { path: "/project/:id", element: <ProjectPage /> },
       { path: "/create-project", element: <CreateProjectPage />},
       { path: "/signout", element: <HomePage />},
+      { path: "/users/:id", element: <UserProfilePage />},
     ],
   },
 ]);
