@@ -17,3 +17,4 @@ This project was built with:
 - react
 - netlify for deployment
 
+You can view the api for this website on <a href="https://github.com/SheCodesAus/she-codes-crowdfunding-api-project-what-the-hek">GitHub</a>.
